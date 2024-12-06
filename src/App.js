@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { AccountPage, Authentication, CartPage, CheckoutPage, HomePage, LoginPage, OrderSuccesspage, PageNotFoundPage, ProductListingPage, SignupPage, SingleProductPage, WishListPage } from './Pages/indexOfAllPages'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route  path='/' element ={ <HomePage/>}/>
+        <Route path='/AccountPage' element={<AccountPage/>}/>
+        <Route path='/CheckoutPage' element={<CheckoutPage/>}/>
+        <Route path='/LoginPage' element={<LoginPage/>}/>
+        <Route path='/OrderSuccessPage' element={<OrderSuccesspage/>}/>
+        <Route path='/SignupPage' element={<SignupPage/>}/>
+        <Route path='/ProductListingPage' element={<ProductListingPage/>}/>
+        <Route path='/ProductDetails/:id' element={<SingleProductPage/>}/>
+        <Route path='/CartPage'
+          element={<Authentication><CartPage/></Authentication>} />
+        <Route path='/WishListPage'
+          element={<Authentication><WishListPage/></Authentication>} />
+        <Route path='/AccountsPage'
+          element={<Authentication><AccountPage/></Authentication>} />
+        <Route path='*' element={<PageNotFoundPage/>}/>
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
