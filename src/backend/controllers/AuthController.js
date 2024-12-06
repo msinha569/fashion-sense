@@ -3,6 +3,7 @@ import { uuid } from "../../Utils/CustomUtils"
 import { formatDate } from "../utils/authUtils"
 
 
+
 const sign = require("jwt-encode")
 
 export const getLoginData = function (schema, request) {
@@ -19,7 +20,7 @@ export const getLoginData = function (schema, request) {
         if(password===foundUser.password){
             const encodedToken = sign(
                 {
-                    _id: foundUser._id, email
+                    email
                 },
                 process.env.REACT_APP_JWT_SECRET,
                 {
@@ -67,9 +68,9 @@ export const setSignUpData = (schema, request) => {
                 { errors: ["User already exists"] }
             )
         }
-
+        // no need to use await when dealing with mock db
         const _id = uuid()
-        schema.users.create({
+        const user = schema.users.create({
             _id: _id,
             name: name,
             email: email,
@@ -77,13 +78,14 @@ export const setSignUpData = (schema, request) => {
             createdAt: formatDate(),
             updatedAt: formatDate(),
             cart: [],
-            wishlist: []
+            wish: [],
+            type: "temp"
         })
 
         return new Response(
             201,
             {},
-            { message: "User Created Successfully" }
+            { user: user}
         )
     } catch (error) {
         return new Response(
@@ -93,3 +95,40 @@ export const setSignUpData = (schema, request) => {
         );
     }
 };
+
+
+export const getUserType = (schema, request) => {
+ try {
+    console.log(request);
+    
+       const {email} = JSON.parse(request.requestBody)
+       console.log("email");
+       
+       const user = schema.users.findBy({email})
+       if(!user){
+           return new Response(
+               201,
+               {},
+               {
+                  userType: "temp"
+               }
+           )
+       }
+       const userType = user.type
+       return new Response(
+           201,
+           {},
+           {
+               userType: userType
+           }
+       )
+    } catch (error) {
+        return new Response(
+            500,
+            {},
+            {
+                errors: ["something unexpected happened while fetching user details"]
+            }
+        )
+    }
+}

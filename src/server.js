@@ -2,7 +2,7 @@ import { Model, RestSerializer, Server } from "miragejs";
 import { getAllProductsData, getSingleProductData } from "./backend/controllers/ProductController";
 import { products } from "./backend/db/products"
 import { users } from "./backend/db/users"
-import { getLoginData, setSignUpData } from "./backend/controllers/AuthController";
+import { getLoginData, getUserType, setSignUpData } from "./backend/controllers/AuthController";
 import { addItemToCartHandler, removeItemFromCartHandler, updateCartItemHandler } from "./backend/controllers/CartController";
 import { addToWishlistHandler, deleteFromWishlistHandler } from "./backend/controllers/WishlistController";
 
@@ -41,6 +41,7 @@ export const makeServer = ({environment = 'development'}={}) => {
 
             this.post('/api/auth/login', getLoginData.bind(this))
             this.post('/api/auth/signup', setSignUpData.bind(this))
+            this.post('/api/auth/getusertype', getUserType.bind(this))
 
             this.post('/api/user/cart', addItemToCartHandler.bind(this))
             this.delete('api/user/cart/:productId', removeItemFromCartHandler.bind(this))

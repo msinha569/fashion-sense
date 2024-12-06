@@ -14,8 +14,6 @@ export const users = [
     password: "12345678",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    address: {
-      
-    }
+    type: "permanent"
   },
 ];

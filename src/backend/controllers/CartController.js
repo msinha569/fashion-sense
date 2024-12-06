@@ -15,6 +15,8 @@ export const addItemToCartHandler = function (schema, request) {
                 }
             )
         }
+        console.log(schema.users.findBy({_id:userId}));
+        
         const userCart = schema.users.findBy({_id: userId}).cart
         const {product} = JSON.parse(request.requestBody)
         

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signupHandler } from '../../Services/AuthServices';
+import { uuid } from '../../Utils/CustomUtils';
 
 
 const  SignupInput = () => {
@@ -9,7 +10,7 @@ const  SignupInput = () => {
     const [formData, setFormData] = useState({
       name: '',
       email: '',
-      password: '',
+      password: ''
     });
 
     const [hidden, setHidden] = useState(false)

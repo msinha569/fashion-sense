@@ -11,10 +11,15 @@ try {
             data: {product: productData}
         })
         dispatch({type: "WISH", payload: response.data.wish})
+     console.log(response);
      
         toast.success("Item added to WishList")
 } catch (error) {
-        toast.error("You need to login")
+        if (error.response && error.response.data.errors){
+            error.response.data.errors.forEach((error) => toast.error(error))
+        }else{
+            toast.error("You need to login")
+        }
         console.log(error);
         
 }

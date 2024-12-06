@@ -56,5 +56,27 @@ export const signupHandler = async(formData) => {
 export const logoutHandler = (dispatch) => {
     dispatch({type: "LOGOUT"})
     localStorage.removeItem("token")
+    localStorage.removeItem("loginData")
     toast.success("User logged out")
+}
+
+export const tempSignup = async(name, email) => {
+    const formData = {
+        name: name,
+        email: email,
+        password: 1234
+    }
+    try {
+        const res = await axios.post('/api/auth/getusertype',{email})
+        if (res.data.userType==="temp"){
+            const response = await axios.post('/api/auth/signup',formData)
+            console.log(response);
+        }
+        else return
+        
+    } catch (error) {
+        toast.error("unexpected error. please login again")
+        console.log(error);
+        
+    }
 }

@@ -18,11 +18,16 @@ export const addToWishlistHandler = function(schema, request) {
               404,
               {},
               {
-                  errors: ["The user is not authenticated"]
+                  errors: ["You need to login first"]
               }
           )
       }
+      console.log("here");
+      console.log(schema.users.findBy({_id:userId}));
+
       const userWishlist = schema.users.findBy({_id: userId}).wish 
+      console.log("here");
+      
       const {product} = JSON.parse(request.requestBody)
       userWishlist.push({
           ...product,
@@ -32,8 +37,7 @@ export const addToWishlistHandler = function(schema, request) {
       console.log(userWishlist);
       
       return new Response (
-          203,
-          { "Content-Type": "application/json" },
+          201,{},
           {
               wish: userWishlist  
           }

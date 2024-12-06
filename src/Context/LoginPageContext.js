@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { isTokenExpired } from "../Services/TokenValidation";
+import { tempSignup } from "../Services/AuthServices";
 
 
 const LoginContext = createContext()
@@ -19,7 +20,13 @@ const reducerfn = (state, action) => {
 
 
 
-function LoginPageContext({children}) {
+ function  LoginPageContext({children}) {
+
+    const [state, dispatch] = useReducer(reducerfn, {
+        name: "",
+        email: ""
+    })
+
     
     useEffect(() => {
         const token = localStorage.getItem("token")
@@ -31,14 +38,10 @@ function LoginPageContext({children}) {
             dispatch({type: "LOGIN", payload: loginData})
             console.log(state.name);
             console.log(loginData);
-            
+            tempSignup(loginData.name, loginData.email)
         }
       },[])
 
-    const [state, dispatch] = useReducer(reducerfn, {
-        name: "",
-        email: ""
-    })
 
     const {name, email} = state
 
