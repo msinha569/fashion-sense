@@ -8,7 +8,7 @@ function SingleProductPage() {
       <div>
       <Header/>
       </div>
-      <div>
+      <div className='flex justify-center'>
         <SingleProductCard/>
       </div>
     </div>

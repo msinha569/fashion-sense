@@ -21,7 +21,6 @@
       [wish, data._id]
     );
     
-    console.log(data);
     
     return (
       <div

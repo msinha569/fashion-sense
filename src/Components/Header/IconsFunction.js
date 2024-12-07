@@ -5,6 +5,7 @@ import { useLoginContext } from '../../Context/LoginPageContext';
 import { logoutHandler } from '../../Services/AuthServices';
 import { useWishContext } from '../../Context/WishlistPageContext';
 import { useCartContext } from '../../Context/CartPageContext';
+import { FaGithub } from "react-icons/fa6";
 
 
 function IconsFunction({className}) {
@@ -33,6 +34,11 @@ function IconsFunction({className}) {
   return (
 
     <div className={className}>
+     <div className=''>
+      <a href="https://github.com/msinha569/eCommerce" target="_blank" rel="noopener noreferrer">
+        <FaGithub size={35} />
+      </a>
+    </div>
      <div className=''>
         <Link to='/WishListPage'>
          <FaHeart size={30}/>
