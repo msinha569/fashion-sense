@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
-    <div className='bg-slate-700 p-4 sm:flex block justify-center items-center '>
+    <div className='bg-pink-900 p-4 sm:flex block justify-center items-center '>
         <div >
         <img 
          className=' w-full h-64'
@@ -12,11 +12,11 @@ function Hero() {
      <div className='p-4 space-y-5'>
       <div className='text-white font-bold text-3xl sm:text-5xl '>
       Before they sold out<br/>
-      All Super Cars
+      All Women Clothes
       </div>
       <div
       className='text-gray-300 font-thin'>
-      Try the new edge technology at a cheap cost, selling the cars at the best possible price in the market.
+      Rent out clothes with best discount and quality
       </div>
       <Link to='/ProductListingPage'>
       <button

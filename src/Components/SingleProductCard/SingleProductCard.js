@@ -38,7 +38,7 @@ function SingleProductCard() {
   return (
     <div className='m-2 sm:flex w-full  gap-2'>
         <div className='sm:w-1/2 '>
-            <img className='rounded-md h-full w-full  '
+            <img className='rounded-md h-screen w-full object-cover '
             src={singleProduct.image}/>
         </div>
         <div className='sm:w-1/2 sm:p-24 p-4 space-y-2'>

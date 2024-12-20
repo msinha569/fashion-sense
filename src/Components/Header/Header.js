@@ -34,7 +34,7 @@
 
     return (
       <div 
-      className='sm:h-24 h-16   bg-zinc-700 flex justify-between p-3 w-full'>
+      className='sm:h-24 h-16   bg-slate-700 flex justify-between p-3 w-full'>
         <div 
         className='flex  h-full items-center  gap-2'>
           <div 
@@ -42,11 +42,11 @@
             <Link to ="/">
             <span 
             className='hidden sm:block '>
-              E-Commerce
+              Women Clothes
             </span>
             <span 
             className='block sm:hidden'>
-              E-C
+              Dresses
             </span>
             </Link>
           </div>

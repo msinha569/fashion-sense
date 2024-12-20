@@ -24,12 +24,12 @@
     
     return (
       <div
-      className=' w-60 rounded-md m-5 space-y-1 p-2 h-fit  bg-slate-700 hover:scale-105 transform transition-transform duration-300'>
+      className=' w-60 rounded-md m-5 space-y-1 p-2 h-fit  bg-pink-700 hover:scale-105 transform transition-transform duration-300'>
         <div 
         className=' w-full h-36  rounded-md'>
           <Link to={`/ProductDetails/${data._id}`}>        
           <img 
-          className='w-full h-32  rounded-md' 
+          className='w-full h-32  rounded-md object-cover' 
           src={data.image}/>
           </Link>
         </div>
@@ -44,7 +44,7 @@
         className='flex justify-between'>
           <div 
           className='text-white font-bold text-xl'>
-            {data.price}$
+            {data.price}rs
           </div>
           <div 
           className='text-white text-xl'>

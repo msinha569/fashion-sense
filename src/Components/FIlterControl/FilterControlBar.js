@@ -69,23 +69,6 @@ const FilterControlBar = () => {
         </div>
     </div>
 
-    {/* Categories */}
-    <div className="mb-4">
-        <h2 className="font-semibold mb-2">Categories</h2>
-        <div className="space-y-2">
-        {["DIESEL", "PETROL", "EV"].map((category) => (
-            <label key={category} className="flex items-center">
-            <input
-                type="checkbox"
-                className="mr-2 rounded border-gray-300 accent-blue-500"
-                defaultChecked={state.category[category]}
-                onClick={() => dispatch({type: `${category}`})}
-            />
-            {category}
-            </label>
-        ))}
-        </div>
-    </div>
 
     {/* Clear Filters Button */}
     <button className="w-full bg-red-500 text-white py-2 rounded-lg font-semibold">

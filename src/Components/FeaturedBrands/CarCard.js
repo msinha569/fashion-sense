@@ -25,7 +25,7 @@ function CarCard({data, more}) {
 
     return (
   <div
-  className=" w-72 rounded-md m-5 space-y-1 p-2 bg-slate-700 hover:scale-105 transform transition-transform duration-300">
+  className=" w-72 rounded-md m-5 space-y-1 p-2 bg-pink-500 hover:scale-105 transform transition-transform duration-300">
   <div
   className='text-white text-center text-xl font-bold'>
           {data.title}
@@ -39,7 +39,7 @@ function CarCard({data, more}) {
           <img 
           loading='lazy'
           onLoad={() => setIsImageLoaded(true)}
-          className='w-full h-32  rounded-md' 
+          className='w-full h-32 object-cover  rounded-md' 
           src={data.image}/>
         </div>
       
@@ -47,7 +47,7 @@ function CarCard({data, more}) {
         className='flex justify-between'>
           <div 
           className='text-yellow-400 font-bold text-xl p-2'>
-            {data.price}$
+            {data.price}rs
           </div>
           <div>
           {more?moreBox():rateBox()}
