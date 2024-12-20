@@ -4,14 +4,10 @@ import { Link } from 'react-router-dom'
 function Hero() {
   return (
     <div className='bg-pink-900 p-4 sm:flex block justify-center items-center '>
-        <div >
-        <img 
-         className=' w-full h-64'
-         src="car.svg"/>
-        </div>
+       
      <div className='p-4 space-y-5'>
       <div className='text-white font-bold text-3xl sm:text-5xl '>
-      Before they sold out<br/>
+      Before they rent out<br/>
       All Women Clothes
       </div>
       <div

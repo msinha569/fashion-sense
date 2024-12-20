@@ -9,7 +9,7 @@ function FeaturedBrands() {
   return (
     <div className=''>
       <div>
-        <div className='text-center text-3xl font-bold'>Top Categories Cars</div>
+        <div className='text-center text-3xl font-bold'>Top Categories Dresses</div>
         <div className='flex flex-wrap justify-center'>
             {topCars.map((item) =>
             <CarCard data={item} more={false} key={item._id}/>
@@ -17,7 +17,7 @@ function FeaturedBrands() {
         </div>
       </div>
       <div>
-        <div className='text-center text-3xl font-bold'>Featured Cars</div>
+        <div className='text-center text-3xl font-bold'>Featured Dresses</div>
         <div className='flex flex-wrap justify-center'>
             {featuredCars.map((item) =>
             <CarCard data={item} more={true} key={item._id}/>

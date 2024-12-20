@@ -56,7 +56,7 @@ function SingleProductCard() {
             </div>
             <div className='flex justify-between'>
                 <div className='font-bold text-lg'>
-                    {singleProduct.price}$
+                    {singleProduct.price}rs
                     </div>
                 <div className='flex gap-2'>
                 <div className='flex'>
